@@ -36,8 +36,9 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( Comic $manga )
     {
         //
+        return view("comics.show" , compact("manga"));
     }
 }
