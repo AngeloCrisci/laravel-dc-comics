@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeUnit\FunctionUnit;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.home');
+})->name("Homepage");
+
+Route::get('/manga' , [ComicController::class , "index"])->name("comics.index");
