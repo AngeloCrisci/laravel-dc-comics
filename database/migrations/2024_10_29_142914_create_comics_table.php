@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("title")->nullable(false);
             $table->string("description")->nullable(false);
             $table->string("thumb")->nullable(true);
-            $table->float("price")->nullable(false);
+            $table->decimal("price" , total: 4 , places: 2)->nullable(false);
             $table->string("author")->nullable(false);
             $table->timestamps();
         });
