@@ -4,6 +4,9 @@
 
 @section("main-content")
 <div class="container">
+    <a href="{{ route("comics.create") }}" class="btn btn-primary m-3 d-flex justify-content-center align-content-center">
+        Crea un nuovo Manga
+    </a>
     <div class="row mb-2">
     @forelse ($manga as $index => $item )
         <div style="width: 18rem;">
@@ -13,7 +16,7 @@
             <p class="card-text">Descrizione: {{ $item->description }}</p>
             <p class="card-text">Autore: {{ $item->author }}</p>
             <p class="card-text"><strong> Prezzo: $ {{ $item->price }} </strong></p>
-             <a class="btn btn-secondary" href="{{route("comics.show" , $item->id) }}">
+             <a class="btn btn-secondary mb-2" href="{{route("comics.show" , $item->id) }}">
                 Vai al fumetto
             </a>
             </div>

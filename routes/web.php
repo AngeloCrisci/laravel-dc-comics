@@ -19,5 +19,8 @@ Route::get('/', function () {
     return view('pages.home');
 })->name("Homepage");
 
+Route::get('/create' , [ComicController::class , "create"])->name('comics.create');
+Route::post('/manga' , [ComicController::class , "store"])->name('comics.store');
 Route::get('/manga' , [ComicController::class , "index"])->name("comics.index");
 Route::get('/show/{id}', [ComicController::class , "show"])->name('comics.show');
+
