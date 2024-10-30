@@ -27,5 +27,6 @@ Route::get('/manga/create' , [ComicController::class , "create"])->name('comics.
 Route::get('manga/show/{id}', [ComicController::class , "show"])->name('comics.show');
 Route::get("/manga/{id}/edit", [ComicController::class, "edit"])->name("comics.edit");
 Route::put('manga/{id}' , [ComicController::class , "update"])->name("comics.update");
+Route::delete('/manga/{id}' , [ComicController::class , "destroy"])->name("comics.delete");
 
 

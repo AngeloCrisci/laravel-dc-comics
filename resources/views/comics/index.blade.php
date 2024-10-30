@@ -22,6 +22,13 @@
             <a class="btn btn-secondary mb-2" href="{{route("comics.edit" , $item->id) }}">
                 Edita il fumetto
             </a>
+            <form action="{{route("comics.delete" , $item->id) }}"
+                 method="post">
+            @csrf
+            @method("DELETE")
+            <input type="submit" value="Elimina" class="btn btn-danger mb-2">
+
+            </form>
             </div>
         </div>
     @empty
