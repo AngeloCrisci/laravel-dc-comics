@@ -54,4 +54,26 @@ class ComicController extends Controller
         $item = Comic::findOrFail($id);
         return view("comics.show" , compact("item"));
     }
+
+    public function edit(string $id)
+    {
+        $item = Comic::findOrFail($id);
+        return view("comics.edit", compact("item"));
+    }
+
+    public function update(Request $request, string $id){
+        $formData = $request->all();
+        $item = Comic::findOrFail($id);
+
+        $item->title = $formData["title"];
+        $item->description = $formData["description"];
+        $item->price = $formData["price"];
+        $item->thumb = $formData["thumb"];
+        $item->author = $formData["author"];
+        $item->update();
+
+        return redirect()->route("comics.show" , ["id" => $item->id]);
+
+    }
+
 }

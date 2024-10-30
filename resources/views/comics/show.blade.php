@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-@section("page-title", "Manga Singolo")
+@section("page-title", "Manga {{$item->title}}")
 
 @section("main-content")
 <h1 class="text-center text-white mb-4">
@@ -17,6 +17,9 @@
             <p class="card-text">Autore: {{ $item["author"] }}</p>
             </div>
         </div>
+        <a class="btn btn-secondary mb-2" href="{{route("comics.index") }}">
+            Torna alla lista
+        </a>
     </div>
 </div>
 @endsection

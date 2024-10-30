@@ -19,6 +19,9 @@
              <a class="btn btn-secondary mb-2" href="{{route("comics.show" , $item->id) }}">
                 Vai al fumetto
             </a>
+            <a class="btn btn-secondary mb-2" href="{{route("comics.edit" , $item->id) }}">
+                Edita il fumetto
+            </a>
             </div>
         </div>
     @empty
