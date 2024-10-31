@@ -14,23 +14,38 @@
             </h1>
             <div class="mb-3">
                 <label for="manga-title" class="form-label">Titolo:</label>
-                <input type="text" class="form-control" id="manga-title" name="title" value="{{$item->title}}">
+                <input type="text" class="form-control" id="manga-title" name="title" value="{{ old('title') }}{{$item->title}}">
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="manga-description" class="form-label">Descrizione:</label>
-                <input type="text" class="form-control" id="manga-description" name="description" value="{{$item->description}}">
+                <input type="text" class="form-control" id="manga-description" name="description" value="{{ old('description') }}{{$item->description}}">
+                @error('description')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="manga-price" class="form-label">Prezzo:</label>
-                <input type="number" class="form-control" id="manga-price" name="price" value="{{$item->price}}">
+                <input type="number" class="form-control" id="manga-price" name="price" value="{{ old('price') }}{{$item->price}}">
+                @error('price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="manga-thumb" class="form-label">Ulr immagine:</label>
-                <input type="text" class="form-control" id="manga-thumb" name="thumb" value="{{$item->thumb}}">
+                <input type="text" class="form-control" id="manga-thumb" name="thumb" value="{{ old('thumb') }}{{$item->thumb}}">
+                @error('thumb')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="manga-author" class="form-label">Autore:</label>
-                <input type="text" class="form-control" id="manga-author" name="author" value="{{$item->author}}">
+                <input type="text" class="form-control" id="manga-author" name="author" value="{{ old('author') }}{{$item->author}}">
+                @error('author')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3 d-flex justify-content-center align-items-center">
                 <button type="submit" class="btn btn-primary me-3">

@@ -64,7 +64,7 @@ class ComicController extends Controller
         return view("comics.edit", compact("item"));
     }
 
-    public function update(Request $request, string $id){
+    public function update(StoreMangaRequest $request, string $id){
         $formData = $request->all();
         $item = Comic::findOrFail($id);
 
