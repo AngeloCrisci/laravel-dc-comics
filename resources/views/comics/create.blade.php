@@ -13,7 +13,10 @@
             </h1>
             <div class="mb-3">
                 <label for="manga-title" class="form-label">Titolo:</label>
-                <input type="text" class="form-control" id="manga-title" name="title">
+                <input type="text" class="form-control" id="manga-title" name="title" value="{{ old('title') }}" class="@error('title') is-invalid @enderror">
+                @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="manga-description" class="form-label">Descrizione:</label>
