@@ -23,8 +23,11 @@ class StoreMangaRequest extends FormRequest
     {
         return [
             //
-            'title' =>  'required|unique:manga|strin|min:3|max:100'
-            'description' =>
+            'title' =>  'required|unique:manga|string|min:3|max:100',
+            'description' => 'required|string|min:3|max:255',
+            'price' => 'required|decimal:1,100',
+            'thumb' => 'required|url:http,https',
+            'author' => 'required|string|min:3|max:100',
         ];
     }
 }
