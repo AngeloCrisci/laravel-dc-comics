@@ -11,7 +11,7 @@ class StoreMangaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,9 +23,9 @@ class StoreMangaRequest extends FormRequest
     {
         return [
             //
-            'title' =>  'required|unique:manga|string|min:3|max:100',
+            'title' =>  'required|unique:comics|string|min:3|max:100',
             'description' => 'required|string|min:3|max:255',
-            'price' => 'required|decimal:1,100',
+            'price' => 'required',
             'thumb' => 'required|url:http,https',
             'author' => 'required|string|min:3|max:100',
         ];
